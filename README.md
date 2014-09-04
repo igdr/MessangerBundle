@@ -26,6 +26,7 @@ Then add the MessangerBundle to your application kernel:
         return array(
             // ...
             new Igdr\Bundle\MessangerBundle\IgdrMessangerBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             // ...
         );
     }
