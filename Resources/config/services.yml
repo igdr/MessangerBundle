@@ -1,0 +1,6 @@
+services:
+    igdr_messanger.service.messanger:
+         class:  'Igdr\Bundle\MessangerBundle\Service\MessangerService'
+         arguments: [%email_from%]
+         calls:
+             - [setMailer, [@swiftmailer.mailer]]

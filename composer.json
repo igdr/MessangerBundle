@@ -1,0 +1,23 @@
+{
+    "name": "igdr/messanger-bundle",
+    "type": "symfony-bundle",
+    "description": "Messanger Bundle",
+    "keywords": ["Igdr", "Messanger"],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:igdr/ManagerBundle.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.5.*",
+        "symfony/swiftmailer-bundle": "~2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Igdr\\Bundle\\MessangerBundle": ""
+        }
+    },
+    "target-dir": "Igdr/Bundle/MessangerBundle"
+}
