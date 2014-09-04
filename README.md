@@ -29,3 +29,17 @@ Then add the MessangerBundle to your application kernel:
             // ...
         );
     }
+
+    //app/config/parameters.ini
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+
+
+    //app/config/config.yml
+    swiftmailer:
+        transport: "%mailer_transport%"
+        host:      "%mailer_host%"
+        username:  "%mailer_user%"
+        password:  "%mailer_password%"

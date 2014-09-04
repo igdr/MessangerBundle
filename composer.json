@@ -3,12 +3,6 @@
     "type": "symfony-bundle",
     "description": "Messanger Bundle",
     "keywords": ["Igdr", "Messanger"],
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:igdr/ManagerBundle.git"
-        }
-    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.5.*",
