@@ -27,6 +27,6 @@ class IgdrMessangerExtension extends Extension
      */
     public function getAlias()
     {
-        return 'app_messanger';
+        return 'igdr_messanger';
     }
 }
