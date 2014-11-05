@@ -5,13 +5,6 @@ Installation
 
 Add the bundle to your `composer.json`:
 
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:igdr/MessangerBundle.git"
-        }
-    ],
-
     "igdr/messanger-bundle" : "dev-master"
 
 and run:
