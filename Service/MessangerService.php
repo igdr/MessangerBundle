@@ -30,16 +30,24 @@ class MessangerService
     }
 
     /**
-     * @param Message $message
+     * @param \Igdr\Bundle\MessangerBundle\Model\Message $message
+     *
+     * @return bool|string
      */
     public function send(Message $message)
     {
-        $swiftMessage = \Swift_Message::newInstance()
-            ->setSubject($message->getSubject())
-            ->setFrom($message->getFrom() ? $message->getFrom() : $this->from, $message->getFromName())
-            ->setTo($message->getTo(), $message->getToName());
-        $swiftMessage->setBody($message->getContent(), 'text/html');
+        try {
+            $swiftMessage = \Swift_Message::newInstance()
+                ->setSubject($message->getSubject())
+                ->setFrom($message->getFrom() ? $message->getFrom() : $this->from, $message->getFromName())
+                ->setTo($message->getTo(), $message->getToName());
+            $swiftMessage->setBody($message->getContent(), 'text/html');
 
-        $this->mailer->send($swiftMessage);
+            $this->mailer->send($swiftMessage);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+
+        return true;
     }
 }
