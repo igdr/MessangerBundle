@@ -14,11 +14,24 @@ class MessangerService
     private $mailer;
 
     /**
-     * @param string $from
+     * @var string
      */
-    public function __construct($from)
+    private $from;
+
+    /**
+     * @var string
+     */
+    private $fromName;
+
+    /**
+     * @param string $from
+     * @param string $fromName
+     */
+    public function __construct($from, $fromName)
     {
         $this->from = $from;
+        $this->fromName = $fromName;
+
     }
 
     /**
@@ -39,7 +52,7 @@ class MessangerService
         try {
             $swiftMessage = \Swift_Message::newInstance()
                 ->setSubject($message->getSubject())
-                ->setFrom($message->getFrom() ? $message->getFrom() : $this->from, $message->getFromName())
+                ->setFrom($message->getFrom() ? $message->getFrom() : $this->from, $message->getFromName() ? $message->getFromName() : $this->fromName)
                 ->setTo($message->getTo(), $message->getToName());
             $swiftMessage->setBody($message->getContent(), 'text/html');
 

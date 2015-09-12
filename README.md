@@ -38,3 +38,8 @@ Add swiftmailer configuration to app/config/config.yml
         host:      "%mailer_host%"
         username:  "%mailer_user%"
         password:  "%mailer_password%"
+        
+    igdr_messanger:
+        email: 
+            from: text@example.com
+            from_name: example
