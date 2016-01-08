@@ -3,4 +3,4 @@ services:
          class:  Igdr\Bundle\MessangerBundle\Service\MessangerService
          arguments: ["", ""]
          calls:
-             - [setMailer, [@swiftmailer.mailer]]
+             - [setMailer, ["@swiftmailer.mailer"]]
